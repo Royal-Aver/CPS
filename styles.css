@@ -123,14 +123,15 @@ a {
 }
 
 .header__container {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header__left {
   display: flex;
   align-items: center;
-  margin-right: 20px;
 }
 
 .header__burger {
@@ -190,6 +191,13 @@ a {
   font-size: 16px;
   line-height: 24px;
   color: #7E7E82;
+  padding: 8px;
+  border: 2px solid transparent;
+}
+
+.services__link:hover {
+  border: 2px solid #B8FFEC;
+  border-radius: 6px;
 }
 
 .services__text {
@@ -204,12 +212,18 @@ a {
 
 .services__list {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   overflow: auto;
+  min-height: 40px;
 }
 
 .services__item {
+  flex: 1 0 auto;
+}
+
+.services__item:not(:last-child) {
   margin-right: 25px;
-  min-width: 118px;
 }
 
 .services__add-link {
