@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: "TTlakes", sans-serif;
-  src: url(../fonts/TTLakes-Bold.woff2),
-  url(../fonts/TTLakes-Bold.woff);
+  src: url(/fonts/TTLakes-Bold.woff2),
+  url(/fonts/TTLakes-Bold.woff);
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -11,8 +11,8 @@
 
 @font-face {
   font-family: "TTlakes", sans-serif;
-  src: url(../fonts/TTLakes-Regular.woff2),
-  url(../fonts/TTLakes-Regular.woff);
+  src: url(/fonts/TTLakes-Regular.woff2),
+  url(/fonts/TTLakes-Regular.woff);
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -20,22 +20,17 @@
 
 @font-face {
   font-family: "TTlakes", sans-serif;
-  src: url(../fonts/TTLakes-Light.woff2),
-  url(../fonts/TTLakes-Light.woff);
+  src: url(/fonts/TTLakes-Light.woff2),
+  url(/fonts/TTLakes-Light.woff);
   font-weight: 300;
   font-display: swap;
   font-style: normal;
 }
 
-h1 {
-  font-family: "TTlakes";
-  font-weight: 700;
-}
-
 /* GLOBAL */
 
 body {
-  font-family: "TTlakes";
+  font-family: "TTlakes", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -51,7 +46,6 @@ body {
 
 @media (min-width: 768px) {
   .container {
-    min-width: 264px;
     padding:0 24px;
   }
 }
@@ -149,6 +143,25 @@ a {
 
 .header__burger {
   margin-right: 17px;
+  position: relative;
+}
+
+.header__burger::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 32px;
+  right: -20px;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-radius: 1px;
+  background-color: #EAEAEA;
+}
+
+@media (min-width: 768px) {
+  .header__burger {
+    margin-right: 43px;;
+  }
 }
 
 .userbar {
@@ -195,8 +208,15 @@ a {
 
 /* SERVICES */
 .services {
-  padding: 16px 0 35px;
+  padding: 24px 0 35px;
   position: relative;
+  background-color: #F8F8F8;
+}
+
+@media (min-width: 1120px) {
+  .services {
+    padding: 42px 0 35px;
+  }
 }
 
 .services::before {
@@ -210,18 +230,29 @@ a {
   border-radius: 0 5px 5px 0;
 }
 
+@media (min-width: 1120px) {
+  .services::before {
+    top: 42px;
+  }
+}
+
 .services__title-box {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 
 .services__title {
-  padding-left: 16px;
   font-size: 28px;
   line-height: 40px;
   letter-spacing: -0.6px;
   margin-bottom: 30px;
+}
+
+@media (min-width: 1120px) {
+  .services__title{
+    margin-bottom: 0;
+  }
 }
 
 .services__userbar {
@@ -245,13 +276,21 @@ margin-right: 32px;
 
 .services__userbar-text {
   margin-right: 8px;
+  font-size: 16px;
 }
 
 .services__menu {
   margin-bottom: 30px;
 }
 
+@media (min-width: 1120px) {
+  .services__menu {
+    margin-bottom: 20px;
+  }
+  }
+
 .services__link {
+  display: block;
   font-size: 16px;
   line-height: 24px;
   color: #7E7E82;
@@ -267,6 +306,7 @@ margin-right: 32px;
 @media (min-width: 768px) {
 .services__content {
   display: flex;
+  justify-content: space-between;
 }
 }
 
@@ -283,8 +323,17 @@ margin-right: 48px;
 @media (min-width: 1120px) {
   .services__title-reviews {
   display: block;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7E7E82;
   margin-bottom: 18px;
+  padding-left: 32px;
   }
+  }
+
+  .services__text {
+    flex: 1 1 312px;
+    margin-right: 3px;
   }
 
 .services__text-item {
@@ -321,8 +370,14 @@ display: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: auto;
+  overflow: hidden;
   min-height: 40px;
+}
+
+@media screen {
+.services__list {
+  overflow: scroll;
+}
 }
 
 .services__item {
@@ -347,8 +402,26 @@ display: none;
   left: 0;
   width: 8px;
   height: 11px;
-  background-image: url(./src/images/services/arrow-bottom.svg);
+  background-image: url(./images/services/arrow-bottom.svg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.services__img-box {
+  flex: 1 0 360px;
+  border-radius: 6px;
+}
+
+@media (min-width: 1120px) {
+  .services__img-box{
+    flex: 1 0 531px;
+    padding-top: 32px;
+    }
+}
+
+.services__img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 6px;
 }
