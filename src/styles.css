@@ -167,7 +167,7 @@ a {
 
 @media (min-width: 768px) {
   .header__burger {
-    margin-right: 43px;;
+    margin-right: 43px;
   }
 }
 
@@ -307,18 +307,18 @@ margin-right: 32px;
 }
 
 .services__menu {
-  margin-bottom: 23px;
+  margin-bottom: 5px;
 }
 
 @media (min-width: 768px) {
   .services__menu {
-    margin-bottom: 32px;
+    margin-bottom: 14px;
   }
   }
 
 @media (min-width: 1120px) {
   .services__menu {
-    margin-bottom: 12px;
+    margin-bottom: -4px;
   }
   }
 
@@ -371,7 +371,7 @@ margin-right: 48px;
 
   @media (min-width: 768px) {
     .services__text {
-      margin: 0 3px 14px 0;
+      margin: 0 3px 10px 0;
       }
   }
 
@@ -410,8 +410,11 @@ display: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
   min-height: 40px;
+}
+
+.services__list::-webkit-scrollbar {
+  width: 0;
 }
 
 @media screen {
