@@ -29,13 +29,26 @@
 
 /* GLOBAL */
 
-body {
+html, body {
+  height: 100%;
   font-family: "TTlakes", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   color: #1B1C21;
   letter-spacing: 0.2px;
+
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+	flex-direction: column;
+  overflow: hidden;
+}
+
+.page {
+  flex: 1 1 auto;
 }
 
 .container {
@@ -47,6 +60,12 @@ body {
 @media (min-width: 768px) {
   .container {
     padding:0 24px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .container {
+    padding:0 34px;
   }
 }
 
@@ -146,21 +165,23 @@ a {
   position: relative;
 }
 
-.header__burger::before {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 32px;
-  right: -20px;
-  top: 50%;
-  transform: translate(0, -50%);
-  border-radius: 1px;
-  background-color: #EAEAEA;
-}
-
 @media (min-width: 768px) {
   .header__burger {
     margin-right: 43px;;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__burger::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 32px;
+    right: -22px;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 1px;
+    background-color: #EAEAEA;
   }
 }
 
@@ -194,7 +215,7 @@ a {
   position: absolute;
   width: 2px;
   height: 32px;
-  left: -20px;
+  left: -25px;
   top: 50%;
   transform: translate(0, -50%);
   border-radius: 1px;
@@ -206,28 +227,28 @@ a {
 }
 
 
-/* SERVICES */
+/*------------ SERVICES --------------------------------------------- */
 .services {
   padding: 24px 0 35px;
   position: relative;
   background-color: #F8F8F8;
 }
 
-@media (min-width: 1120px) {
-  .services {
-    padding: 42px 0 35px;
-  }
-}
-
 .services::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 18px;
+  top: 24px;
   width: 4px;
   height: 40px;
   background-color: #41F6D7;
   border-radius: 0 5px 5px 0;
+}
+
+@media (min-width: 1120px) {
+  .services {
+    padding: 42px 0 35px;
+  }
 }
 
 @media (min-width: 1120px) {
@@ -240,19 +261,25 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: start;
+  margin-bottom: 22px;
+}
+
+@media (min-width: 768px) {
+  .services__title-box{
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .services__title-box{
+    margin-bottom: 8px;
+  }
 }
 
 .services__title {
   font-size: 28px;
   line-height: 40px;
   letter-spacing: -0.6px;
-  margin-bottom: 30px;
-}
-
-@media (min-width: 1120px) {
-  .services__title{
-    margin-bottom: 0;
-  }
 }
 
 .services__userbar {
@@ -280,12 +307,18 @@ margin-right: 32px;
 }
 
 .services__menu {
-  margin-bottom: 30px;
+  margin-bottom: 23px;
 }
+
+@media (min-width: 768px) {
+  .services__menu {
+    margin-bottom: 32px;
+  }
+  }
 
 @media (min-width: 1120px) {
   .services__menu {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
   }
 
@@ -327,17 +360,23 @@ margin-right: 48px;
   line-height: 24px;
   color: #7E7E82;
   margin-bottom: 18px;
-  padding-left: 32px;
+  padding-left: 24px;
   }
   }
 
   .services__text {
     flex: 1 1 312px;
-    margin-right: 3px;
+    margin: 0 3px 10px 0;
   }
 
-.services__text-item {
-  margin-bottom: 15px;
+  @media (min-width: 768px) {
+    .services__text {
+      margin: 0 3px 14px 0;
+      }
+  }
+
+.services__text-item:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .services__text-item:last-child {
@@ -345,8 +384,15 @@ display: none;
 }
 
 @media (min-width: 768px) {
+  .services__text-item {
+    line-height: 20px;
+    }
+}
+
+@media (min-width: 768px) {
   .services__text-item:last-child {
     display: block;
+    line-height: 20px;
     }
 }
 
@@ -360,12 +406,6 @@ display: none;
     }
 }
 
-.services__add-link {
-  display: block;
-  padding-left: 22px;
-  margin-bottom: 16px;
-}
-
 .services__list {
   display: flex;
   align-items: center;
@@ -376,7 +416,7 @@ display: none;
 
 @media screen {
 .services__list {
-  overflow: scroll;
+  overflow: auto;
 }
 }
 
@@ -390,8 +430,12 @@ display: none;
 
 .services__add-link {
   position: relative;
+  display: block;
+  padding-left: 32px;
+  margin-bottom: 16px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 300;
+  line-height: 24px;
 }
 
 .services__add-link::before {
@@ -399,7 +443,7 @@ display: none;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  left: 0;
+  left: 8px;
   width: 8px;
   height: 11px;
   background-image: url(./images/services/arrow-bottom.svg);
@@ -423,5 +467,10 @@ display: none;
 .services__img {
   object-fit: cover;
   width: 100%;
-  border-radius: 6px;
+}
+
+@media (min-width: 768px) {
+  .services__img{
+    border-radius: 6px;
+    }
 }
