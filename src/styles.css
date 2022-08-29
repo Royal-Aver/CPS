@@ -65,6 +65,7 @@ html, body {
 
 @media (min-width: 1120px) {
   .container {
+    width: 1168px;
     padding:0 34px;
   }
 }
@@ -112,6 +113,7 @@ ul {
 img {
 	max-width: 100%;
 	display: block;
+  height: auto;
 }
 
 input,
@@ -185,6 +187,15 @@ a {
   }
 }
 
+.burger {
+  width: 40px;
+  height: 40px;
+  background-image: url(images/header/burger.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .userbar {
   display: flex;
   align-items: center;
@@ -206,8 +217,30 @@ a {
   margin-right: 16px;
 }
 
+.userbar__link {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.userbar__call {
+  background-image: url(images/header/call.svg);
+}
+
+.userbar__chat {
+  background-image: url(images/header/chat.svg);
+}
+
+.userbar__profile {
+  background-image: url(images/header/profile.svg);
+}
+
 .userbar__right {
   position: relative;
+  display: flex;
 }
 
 .userbar__right::before {
@@ -224,8 +257,13 @@ a {
 
 .userbar__apply {
   margin-right: 10px;
+  background-image: url(images/header/repair.svg);
 }
 
+.userbar__repair-status {
+  margin-right: 10px;
+  background-image: url(images/header/checkstatus.svg);
+}
 
 /*------------ SERVICES --------------------------------------------- */
 .services {
@@ -306,6 +344,22 @@ margin-right: 32px;
   font-size: 16px;
 }
 
+.services__icon {
+  width: 40px;
+  height: 40px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.services__repair-icon {
+  background-image: url(images/header/repair.svg);
+}
+
+.services__checkstatus-icon {
+  background-image: url(images/header/checkstatus.svg);
+}
+
 .services__menu {
   margin-bottom: 5px;
 }
@@ -321,6 +375,47 @@ margin-right: 32px;
     margin-bottom: -4px;
   }
   }
+
+  .services__list {
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    scrollbar-width: none; /* Скрывает скрол в FireFox */
+  }
+
+  .services__list::-webkit-scrollbar {
+    width: 0;
+  }
+
+  @media screen {
+  .services__list {
+    overflow: auto;
+  }
+  }
+
+  @media (min-width: 1120px) {
+    .services__list  {
+      flex-wrap: wrap;
+    }
+    }
+
+    .services__item {
+      flex: 1 0 auto;
+    }
+
+  .services__item:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  .services__item:last-child {
+    display: none;
+  }
+
+  @media (min-width: 1120px) {
+    .services__item:last-child  {
+      display: block;
+    }
+    }
 
 .services__link {
   display: block;
@@ -348,21 +443,6 @@ margin-right: 32px;
 margin-right: 48px;
 }
 }
-
-.services__title-reviews {
-  display: none;
-}
-
-@media (min-width: 1120px) {
-  .services__title-reviews {
-  display: block;
-  font-size: 16px;
-  line-height: 24px;
-  color: #7E7E82;
-  margin-bottom: 18px;
-  padding-left: 24px;
-  }
-  }
 
   .services__text {
     flex: 1 1 312px;
@@ -404,31 +484,6 @@ display: none;
   .services__text-add {
     display: inline;
     }
-}
-
-.services__list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 40px;
-}
-
-.services__list::-webkit-scrollbar {
-  width: 0;
-}
-
-@media screen {
-.services__list {
-  overflow: auto;
-}
-}
-
-.services__item {
-  flex: 1 0 auto;
-}
-
-.services__item:not(:last-child) {
-  margin-right: 25px;
 }
 
 .services__add-link {
@@ -477,3 +532,4 @@ display: none;
     border-radius: 6px;
     }
 }
+
