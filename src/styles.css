@@ -618,6 +618,8 @@ transition: transform .5s ease-in-out;
 }
 
 .menu-mobile__footer-userbar {
+  display: flex;
+  align-items: center;
   margin-bottom: 16px;
 }
 
