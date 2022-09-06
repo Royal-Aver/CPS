@@ -39,31 +39,6 @@ window.onresize = function() {
     swiperMode();
 }
 
-
-
-// let buttonOpenPopup = document.querySelector(".repair-menu__show-all");
-// let hiddenItemArrTablet = document.querySelectorAll(".repair-menu__item--hidden-tablet");
-// let hiddenItemArrDesctop = document.querySelectorAll(".repair-menu__item--hidden-desctop");
-// const screenWidth = window.innerWidth;
-
-// if (screenWidth >= 768 && screenWidth < 1121) {
-//   for (let itemArr of hiddenItemArrTablet) {
-//   console.log(screenWidth);
-//   buttonOpenPopup.addEventListener("click", function () {
-//     itemArr.classList.toggle("repair-menu__item--visible");
-//   });
-// }
-// } else if (screenWidth >= 1121) {
-//   for (let itemArr of hiddenItemArrDesctop) {
-//     console.log(screenWidth);
-//     itemArr.classList.remove("repair-menu__item--hidden-tablet");
-//     buttonOpenPopup.addEventListener("click", function () {
-
-//       itemArr.classList.toggle("repair-menu__item--visible");
-//     });
-//   }
-// }
-
 let buttonOpenFullList = document.querySelector(".repair-menu__show-all"); // кнопка
 let list = document.querySelector(".repair-menu__list"); // список
 
@@ -84,12 +59,3 @@ let list = document.querySelector(".repair-menu__list"); // список
 
   console.log(buttonOpenFullList.innerHTML)
 })
-
-
-
-
-
-//   if (listItem.length > 4) {
-//
-//   }
-// )}
